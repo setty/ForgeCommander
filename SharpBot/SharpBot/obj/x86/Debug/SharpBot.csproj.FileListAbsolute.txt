@@ -8,3 +8,5 @@ c:\users\wouter gerarts\documents\visual studio 2010\Projects\SharpBot\SharpBot\
 c:\users\wouter gerarts\documents\visual studio 2010\Projects\SharpBot\SharpBot\obj\x86\Debug\SharpBot.csproj.GenerateResource.Cache
 c:\users\wouter gerarts\documents\visual studio 2010\Projects\SharpBot\SharpBot\obj\x86\Debug\SharpBot.exe
 c:\users\wouter gerarts\documents\visual studio 2010\Projects\SharpBot\SharpBot\obj\x86\Debug\SharpBot.pdb
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.exe
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.pdb
