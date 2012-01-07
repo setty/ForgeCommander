@@ -56,13 +56,13 @@ namespace SharpBot
         }
         public void SendMessage(string message)
         {
-            if (message.Length > 119)
+            if (message.Length > 90)
             {
-                string remaining = "asdfg";
+                string remaining = message.Remove(0, 90);
                 while (remaining.Length > 0)
                 {
-                    remaining = message.Remove(0, 119);
-                    SharpControl.Client.SendChat(message.Remove(120, remaining.Length));
+                    SharpControl.Client.SendChat("/tell " + Playername + " " + message.Remove(91, (remaining.Length - 90)));
+                    remaining = remaining.Remove(0, 90);
                 }
             }
             else
