@@ -20,7 +20,7 @@ namespace SharpBot
         }
         private void User_Control_Load(object sender, EventArgs e)
         {
-            label2.Text = SharpControl.p.UserName;
+            //load user control shizzl
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -206,6 +206,18 @@ namespace SharpBot
             if (SharpControl.Client.Player.SelectedSlot > 9) { SharpControl.Client.Player.SelectedSlot = 0; }
             if (SharpControl.Client.Player.SelectedSlot < 0) { SharpControl.Client.Player.SelectedSlot = 9; }
             SharpControl.Client.SendPlayerPositionAndLook();
+        }
+
+        private void butDisconnect_Click(object sender, EventArgs e)
+        {
+            SharpControl.Client.Disconnect();
+            Close();
+                                  
+        }
+
+        private void User_Control_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SharpControl.Client.Disconnect();
         }
     }
 }

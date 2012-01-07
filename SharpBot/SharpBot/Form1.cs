@@ -18,9 +18,6 @@ namespace SharpBot
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SharpControl.Login(txtUser.Text, txtPass.Text, txtServer.Text);
-            Hide();
-            (new User_Control()).ShowDialog();
             if (txtUser.Text != "" && txtServer.Text != "")
             {
                 string port;
@@ -57,6 +54,7 @@ namespace SharpBot
                     MessageBox.Show("Make sure to enter a hostname!");
                 }
             }
+            Show();
         }
     }
 }

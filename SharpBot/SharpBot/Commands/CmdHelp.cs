@@ -30,7 +30,7 @@ namespace SharpBot.Commands
         }
         public override void Help(Player p)
         {
-            p.SendMessage("!help <command> - Shows command help");
+            p.SendMessage("/help <command> - Shows command help");
         }
     }
 }

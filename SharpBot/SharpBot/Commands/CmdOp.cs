@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SharpBot.Commands
 {
-    class CmdOp : Command
+    class CmdHelp : Command
     {
-        public override string name { get { return "op"; } }
+        public override string name { get { return ""; } }
         public override string shortcut { get { return ""; } }
         public override void Use(Player p, string message)
         {
@@ -22,9 +22,9 @@ namespace SharpBot.Commands
         }
         public override void Help(Player p)
         {
-            p.SendMessage("!op add <username> - ops a user");
-            p.SendMessage("!op del <username> - de-ops a user");
-            p.SendMessage("!op list - shows all operators");
+            p.SendMessage("/op add <username> - ops a user");
+            p.SendMessage("/op del <username> - de-ops a user");
+            p.SendMessage("/op list - shows all operators");
         }
     }
 }

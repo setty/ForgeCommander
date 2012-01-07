@@ -48,11 +48,12 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.butDisconnect = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -94,7 +95,7 @@
             // 
             // btnW
             // 
-            this.btnW.Location = new System.Drawing.Point(656, 7);
+            this.btnW.Location = new System.Drawing.Point(447, 12);
             this.btnW.Name = "btnW";
             this.btnW.Size = new System.Drawing.Size(37, 35);
             this.btnW.TabIndex = 2;
@@ -104,7 +105,7 @@
             // 
             // btnS
             // 
-            this.btnS.Location = new System.Drawing.Point(656, 48);
+            this.btnS.Location = new System.Drawing.Point(447, 53);
             this.btnS.Name = "btnS";
             this.btnS.Size = new System.Drawing.Size(37, 35);
             this.btnS.TabIndex = 4;
@@ -114,7 +115,7 @@
             // 
             // btnA
             // 
-            this.btnA.Location = new System.Drawing.Point(613, 48);
+            this.btnA.Location = new System.Drawing.Point(404, 53);
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(37, 35);
             this.btnA.TabIndex = 5;
@@ -124,7 +125,7 @@
             // 
             // btnD
             // 
-            this.btnD.Location = new System.Drawing.Point(699, 48);
+            this.btnD.Location = new System.Drawing.Point(490, 53);
             this.btnD.Name = "btnD";
             this.btnD.Size = new System.Drawing.Size(37, 35);
             this.btnD.TabIndex = 6;
@@ -134,7 +135,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(613, 89);
+            this.button2.Location = new System.Drawing.Point(404, 94);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(59, 35);
             this.button2.TabIndex = 7;
@@ -144,7 +145,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(678, 89);
+            this.button3.Location = new System.Drawing.Point(469, 94);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(59, 35);
             this.button3.TabIndex = 8;
@@ -154,7 +155,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(613, 7);
+            this.button4.Location = new System.Drawing.Point(404, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(37, 35);
             this.button4.TabIndex = 9;
@@ -164,7 +165,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(699, 7);
+            this.button5.Location = new System.Drawing.Point(490, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(37, 35);
             this.button5.TabIndex = 10;
@@ -206,16 +207,16 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(403, 336);
+            this.checkBox1.Location = new System.Drawing.Point(12, 363);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(92, 17);
+            this.checkBox1.Size = new System.Drawing.Size(91, 17);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Clear on send";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(678, 130);
+            this.button7.Location = new System.Drawing.Point(469, 135);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(59, 35);
             this.button7.TabIndex = 12;
@@ -225,7 +226,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(613, 130);
+            this.button8.Location = new System.Drawing.Point(404, 135);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(59, 35);
             this.button8.TabIndex = 11;
@@ -235,9 +236,9 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(613, 197);
+            this.button9.Location = new System.Drawing.Point(6, 58);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(124, 25);
+            this.button9.Size = new System.Drawing.Size(112, 25);
             this.button9.TabIndex = 13;
             this.button9.Text = "Place block below";
             this.button9.UseVisualStyleBackColor = true;
@@ -245,49 +246,50 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(613, 171);
+            this.txtID.Location = new System.Drawing.Point(6, 32);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(123, 20);
+            this.txtID.Size = new System.Drawing.Size(112, 20);
             this.txtID.TabIndex = 14;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
-            // button10
+            // groupBox3
             // 
-            this.button10.Location = new System.Drawing.Point(613, 330);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(124, 23);
-            this.button10.TabIndex = 15;
-            this.button10.Text = "Respawn";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.txtID);
+            this.groupBox3.Controls.Add(this.button9);
+            this.groupBox3.Location = new System.Drawing.Point(404, 177);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(124, 89);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Set block";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(403, 12);
+            this.label1.Location = new System.Drawing.Point(70, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "You\'re now:";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Block ID";
             // 
-            // label2
+            // butDisconnect
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(473, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 17;
+            this.butDisconnect.Location = new System.Drawing.Point(404, 272);
+            this.butDisconnect.Name = "butDisconnect";
+            this.butDisconnect.Size = new System.Drawing.Size(124, 24);
+            this.butDisconnect.TabIndex = 16;
+            this.butDisconnect.Text = "Disconnect";
+            this.butDisconnect.UseVisualStyleBackColor = true;
+            this.butDisconnect.Click += new System.EventHandler(this.butDisconnect_Click);
             // 
             // User_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 365);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.button9);
+            this.ClientSize = new System.Drawing.Size(537, 386);
+            this.Controls.Add(this.butDisconnect);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.checkBox1);
@@ -304,11 +306,14 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "User_Control";
             this.Text = "Control panel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.User_Control_FormClosing);
             this.Load += new System.EventHandler(this.User_Control_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,8 +341,8 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button butDisconnect;
     }
 }
