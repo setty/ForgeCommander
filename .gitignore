@@ -1,8 +1,8 @@
 .metadata/*
 
 #Visual Studio files
-/bin
-/obj
+SharpBot/SharpBot/bin
+SharpBot/SharpBot/obj
 *.suo
 *.user
 *.[Cc]ache
