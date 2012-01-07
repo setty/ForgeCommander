@@ -10,3 +10,10 @@ c:\users\wouter gerarts\documents\visual studio 2010\Projects\SharpBot\SharpBot\
 c:\users\wouter gerarts\documents\visual studio 2010\Projects\SharpBot\SharpBot\obj\x86\Debug\SharpBot.pdb
 C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.exe
 C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.pdb
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\bin\Debug\SharpBot.exe
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\bin\Debug\SharpBot.pdb
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.csprojResolveAssemblyReference.cache
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.Form1.resources
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.Properties.Resources.resources
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.User_Control.resources
+C:\Users\Wouter Gerarts\Desktop\ForgeCommander\SharpBot\SharpBot\obj\x86\Debug\SharpBot.csproj.GenerateResource.Cache

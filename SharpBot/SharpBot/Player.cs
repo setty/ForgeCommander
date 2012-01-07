@@ -56,16 +56,28 @@ namespace SharpBot
         }
         public void SendMessage(string message)
         {
-            SharpControl.Client.SendChat("/tell " + Playername + " " + message);
-        }
-        public static void SendMessage(Player p, string message)
-        {
-            SharpControl.Client.SendChat("/tell " + p.Playername + " " + message);
+            if (message.Length > 119)
+            {
+                string remaining = "asdfg";
+                while (remaining.Length > 0)
+                {
+                    remaining = message.Remove(0, 119);
+                    SharpControl.Client.SendChat(message.Remove(120, remaining.Length));
+                }
+            }
+            else
+            {
+                SharpControl.Client.SendChat("/tell " + Playername + " " + message);
+            }
         }
         public void GlobalMessage(string message)
         {
             if (message.StartsWith("/")) { message = "." + message; }
             SharpControl.Client.SendChat(message);
+        }
+        public static string[] oplist()
+        {
+            return File.ReadAllLines("bot/ops.txt");
         }
     }
 }
