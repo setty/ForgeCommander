@@ -45,6 +45,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(231, 20);
             this.txtUser.TabIndex = 0;
+            this.txtUser.Text = "ForgeCommander";
             // 
             // txtPass
             // 
