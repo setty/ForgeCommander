@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SharpBot.Commands
 {
-    class CmdHelp : Command
+    class CmdOp : Command
     {
-        public override string name { get { return ""; } }
+        public override string name { get { return "op"; } }
         public override string shortcut { get { return ""; } }
         public override void Use(Player p, string message)
         {
