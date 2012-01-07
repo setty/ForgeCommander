@@ -3,7 +3,7 @@
 #Visual Studio files
 /SharpBot/SharpBot/bin
 /SharpBot/SharpBot/obj
-/SharpBot/*.suo
+/SharpBot/SharpBot.suo
 *.user
 *.[Cc]ache
 *.bak
