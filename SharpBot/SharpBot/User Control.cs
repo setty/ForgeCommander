@@ -27,6 +27,10 @@ namespace SharpBot
         }
         void Client_OnChat(object sender, ChatEventArgs e)
         {
+            if (e.RawText.Contains("§"))
+            {
+                string result = ""; foreach (string s in e.RawText.Split('§')) { if (!string.IsNullOrEmpty(s)) { result += s.Substring(1); } } e.RawText = result;
+            }
             Addline(e.RawText.ToString());
         }
         private void button1_Click(object sender, EventArgs e)
@@ -155,24 +159,6 @@ namespace SharpBot
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            SendCmd(textBox2.Text);
-        }
-
-        private void textBox2_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) { SendCmd(textBox2.Text); }
-        }
-        public void SendCmd(string text)
-        {
-            SharpControl.Client.SendChat("/" + text);
-            if (checkBox1.Checked)
-            {
-                textBox2.Text = "";
-            }
-        }
-
         private void button8_Click(object sender, EventArgs e)
         {
             SharpControl.Client.Player.Location.Y += 0.5;
@@ -217,11 +203,6 @@ namespace SharpBot
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            SharpControl.Client.Respawn();
-            SendCmd("me respawned!");
-        }
         void Changeselected(short i)
         {
             SharpControl.Client.Player.SelectedSlot += 1;
@@ -232,14 +213,33 @@ namespace SharpBot
 
         private void butDisconnect_Click(object sender, EventArgs e)
         {
-            SharpControl.Client.ForceDisconnect();
+            try
+            {
+                SharpControl.Client.Disconnect();
+            }
+            catch
+            {
+                SharpControl.Client.ForceDisconnect();
+            }
             Close();
                                   
         }
 
         private void User_Control_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SharpControl.Client.ForceDisconnect();
+            try
+            {
+                SharpControl.Client.Disconnect();
+            }
+            catch
+            {
+                SharpControl.Client.ForceDisconnect();
+            }
+        }
+
+        private void ChatBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChatBox1.SelectedIndex = -1;
         }
     }
 }
