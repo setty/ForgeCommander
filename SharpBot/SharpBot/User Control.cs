@@ -354,5 +354,39 @@ namespace SharpBot
             button10.Enabled = true;
             tp.Abort();
         }
+
+        private void User_Control_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+
+                int walkto = GetWalkway();
+                if (walkto == 2) { SharpControl.Client.Player.Location.Z += 0.5; }
+                if (walkto == 3) { SharpControl.Client.Player.Location.X -= 0.5; }
+                if (walkto == 0) { SharpControl.Client.Player.Location.Z -= 0.5; }
+                if (walkto == 1) { SharpControl.Client.Player.Location.X += 0.5; }
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                SharpControl.Client.Player.Rotation.X -= 90;
+                if (SharpControl.Client.Player.Rotation.X > 360) { SharpControl.Client.Player.Rotation.X -= 360; }
+                if (SharpControl.Client.Player.Rotation.X < 0) { SharpControl.Client.Player.Rotation.X += 360; }
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                int walkto = GetWalkway();
+            if (walkto == 0) { SharpControl.Client.Player.Location.Z += 0.5;  }
+            if (walkto == 1) { SharpControl.Client.Player.Location.X -= 0.5;  }
+            if (walkto == 2) { SharpControl.Client.Player.Location.Z -= 0.5;  }
+            if (walkto == 3) { SharpControl.Client.Player.Location.X += 0.5;  }
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                SharpControl.Client.Player.Rotation.X += 90;
+                if (SharpControl.Client.Player.Rotation.X > 360) { SharpControl.Client.Player.Rotation.X -= 360; }
+                if (SharpControl.Client.Player.Rotation.X < 0) { SharpControl.Client.Player.Rotation.X += 360; }
+            }
+            
+        }
     }
 }
