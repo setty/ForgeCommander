@@ -20,12 +20,15 @@ namespace SharpBot
         }
         private void User_Control_Load(object sender, EventArgs e)
         {
-            //load user control shizzl
-            //SharpControl.Client.Player.
+            //addline(line); upon incoming chat
         }
         private void button1_Click(object sender, EventArgs e)
         {
             Sendmsg(textBox1.Text);
+        }
+        private void Addline(string line)
+        {
+            //add to listbox
         }
         private void Sendmsg(string text)
         {

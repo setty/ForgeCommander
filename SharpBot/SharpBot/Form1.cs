@@ -31,17 +31,12 @@ namespace SharpBot
                     port = txtPort.Text;
                 }
                 sendserver = txtServer.Text + ":" + port;
-                try
-                {
+                
                     SharpControl.Login(txtUser.Text, txtPass.Text, sendserver);
                     Hide();
                     (new User_Control()).ShowDialog();
 
-                }
-                catch
-                {
-                    MessageBox.Show("Could not enstablish a connection.");
-                }
+               
             }
             else
             {
