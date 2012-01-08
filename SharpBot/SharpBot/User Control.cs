@@ -203,8 +203,8 @@ namespace SharpBot
             LibMinecraft.Model.Blocks.Block b = SharpControl.Client.World.GetBlock(location);
             if (b.BlockID == 0)
             {
-                Sendmsg("I placed a block at " + location.X.ToString() + " x " + location.Y.ToString() + " x " + location.Z.ToString());
-                SharpControl.Client.World.SetBlock(location, (new LibMinecraft.Model.Blocks.Wood()));
+                //Sendmsg("I placed a block at " + location.X.ToString() + " x " + location.Y.ToString() + " x " + location.Z.ToString());
+                //SharpControl.Client.World.SetBlock(location, (new LibMinecraft.Model.Blocks.Wood()));
             }
         }
 
