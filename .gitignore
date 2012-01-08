@@ -4,6 +4,10 @@
 /SharpBot/SharpBot/bin
 /SharpBot/SharpBot/obj
 /SharpBot/SharpBot.suo
+/SharpBot/*.suo
+SharpBot/SharpBot.suo
+SharpBot/*.suo
+*.suo
 *.user
 *.[Cc]ache
 *.bak

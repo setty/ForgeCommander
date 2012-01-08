@@ -21,6 +21,7 @@ namespace SharpBot
         private void User_Control_Load(object sender, EventArgs e)
         {
             //load user control shizzl
+            //SharpControl.Client.Player.
         }
         private void button1_Click(object sender, EventArgs e)
         {
