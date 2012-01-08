@@ -57,8 +57,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -189,7 +187,7 @@
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(12, 304);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(92, 17);
+            this.checkBox1.Size = new System.Drawing.Size(91, 17);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Clear on send";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -249,7 +247,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(70, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Block ID";
             // 
@@ -326,7 +324,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
+            this.label4.Size = new System.Drawing.Size(14, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Z";
             // 
@@ -335,7 +333,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Y";
             // 
@@ -344,37 +342,15 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "X";
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(537, 177);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(23, 66);
-            this.button14.TabIndex = 23;
-            this.button14.Text = "/\\\r\n/\\\r\n/\\\r\n/\\";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(566, 177);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(23, 66);
-            this.button13.TabIndex = 22;
-            this.button13.Text = "\\/\r\n\\/\r\n\\/\r\n\\/";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // User_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 326);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button13);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.butDisconnect);
             this.Controls.Add(this.groupBox3);
@@ -391,8 +367,10 @@
             this.Controls.Add(this.btnW);
             this.Controls.Add(this.ChatBox1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "User_Control";
-            this.Text = "Control panel";
+            this.Text = "ForgeCommander v0.1 Alpha";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.User_Control_FormClosing);
             this.Load += new System.EventHandler(this.User_Control_Load);
             this.groupBox1.ResumeLayout(false);
@@ -437,7 +415,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
     }
 }

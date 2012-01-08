@@ -34,7 +34,8 @@ namespace SharpBot
                 
                     SharpControl.Login(txtUser.Text, txtPass.Text, sendserver);
                     Hide();
-                    (new User_Control()).ShowDialog();
+                    (new User_Control()).ShowDialog();                    
+                    Close();
 
                
             }
@@ -49,7 +50,7 @@ namespace SharpBot
                     MessageBox.Show("Make sure to enter a hostname!");
                 }
             }
-            Show();
+            
         }
     }
 }

@@ -11,12 +11,15 @@ using SharpBot.Commands;
 using LibMinecraft.Client;
 using LibMinecraft.Model;
 using LibMinecraft.Server;
+using System.Diagnostics;
 
 namespace SharpBot
 {
     public partial class User_Control : Form
     {
+        public bool connected = true;
         public short lasthealth = 0;
+        public bool closed = false;
         public User_Control()
         {
             InitializeComponent();
@@ -25,6 +28,27 @@ namespace SharpBot
         {
             Command.Init();
             SharpControl.Client.OnChat += new EventHandler<ChatEventArgs>(Client_OnChat);
+            SharpControl.Client.OnDisconnect += new EventHandler(Client_OnDisconnect);
+        }
+
+        void Client_OnDisconnect(object sender, EventArgs e)
+        {
+            connected = false;
+            CloseForm(""); //NEEDA FIX THIZ SHIZZL 
+        }
+        
+        public void CloseForm(string message)
+        {
+            if (!closed)
+            {
+                closed = true;
+                if (message == null || message == "")
+                {
+                    message = "You have been disconnected.";
+                }
+                MessageBox.Show(message);
+                Application.Restart();
+            }
         }
         void Client_OnChat(object sender, ChatEventArgs e)
         {
@@ -103,40 +127,40 @@ namespace SharpBot
         private void btnW_Click(object sender, EventArgs e)
         {
             int walkto = GetWalkway();
-            if (walkto == 0) { SharpControl.Client.Player.Location.Z += 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 1) { SharpControl.Client.Player.Location.X -= 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 2) { SharpControl.Client.Player.Location.Z -= 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 3) { SharpControl.Client.Player.Location.X += 1; SharpControl.Client.SendPlayerPositionAndLook(); }
+            if (walkto == 0) { SharpControl.Client.Player.Location.Z += 1;  }
+            if (walkto == 1) { SharpControl.Client.Player.Location.X -= 1;  }
+            if (walkto == 2) { SharpControl.Client.Player.Location.Z -= 1;  }
+            if (walkto == 3) { SharpControl.Client.Player.Location.X += 1;  }
 
         }
 
         private void btnA_Click(object sender, EventArgs e)
         {
             int walkto = GetWalkway();
-            if (walkto == 1) { SharpControl.Client.Player.Location.Z += 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 2) { SharpControl.Client.Player.Location.X -= 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 3) { SharpControl.Client.Player.Location.Z -= 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 0) { SharpControl.Client.Player.Location.X += 1; SharpControl.Client.SendPlayerPositionAndLook(); }
+            if (walkto == 1) { SharpControl.Client.Player.Location.Z += 1;  }
+            if (walkto == 2) { SharpControl.Client.Player.Location.X -= 1;  }
+            if (walkto == 3) { SharpControl.Client.Player.Location.Z -= 1;  }
+            if (walkto == 0) { SharpControl.Client.Player.Location.X += 1;  }
 
         }
 
         private void btnS_Click(object sender, EventArgs e)
         {
             int walkto = GetWalkway();
-            if (walkto == 2) { SharpControl.Client.Player.Location.Z += 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 3) { SharpControl.Client.Player.Location.X -= 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 0) { SharpControl.Client.Player.Location.Z -= 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 1) { SharpControl.Client.Player.Location.X += 1; SharpControl.Client.SendPlayerPositionAndLook(); }
+            if (walkto == 2) { SharpControl.Client.Player.Location.Z += 1;  }
+            if (walkto == 3) { SharpControl.Client.Player.Location.X -= 1;  }
+            if (walkto == 0) { SharpControl.Client.Player.Location.Z -= 1;  }
+            if (walkto == 1) { SharpControl.Client.Player.Location.X += 1;  }
 
         }
 
         private void btnD_Click(object sender, EventArgs e)
         {
             int walkto = GetWalkway();
-            if (walkto == 3) { SharpControl.Client.Player.Location.Z += 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 0) { SharpControl.Client.Player.Location.X -= 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 1) { SharpControl.Client.Player.Location.Z -= 1; SharpControl.Client.SendPlayerPositionAndLook(); }
-            if (walkto == 2) { SharpControl.Client.Player.Location.X += 1; SharpControl.Client.SendPlayerPositionAndLook(); }
+            if (walkto == 3) { SharpControl.Client.Player.Location.Z += 1;  }
+            if (walkto == 0) { SharpControl.Client.Player.Location.X -= 1;  }
+            if (walkto == 1) { SharpControl.Client.Player.Location.Z -= 1;  }
+            if (walkto == 2) { SharpControl.Client.Player.Location.X += 1;  }
 
         }
         /// <summary>
@@ -164,14 +188,14 @@ namespace SharpBot
         private void button2_Click(object sender, EventArgs e)
         {
             SharpControl.Client.Player.Location.Y++;
-            SharpControl.Client.SendPlayerPositionAndLook();
+            
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             SharpControl.Client.Player.Location.Y--;
-            SharpControl.Client.SendPlayerPositionAndLook();
+            
 
         }
 
@@ -180,7 +204,7 @@ namespace SharpBot
             SharpControl.Client.Player.Rotation.X -= 90;
             if (SharpControl.Client.Player.Rotation.X > 360) { SharpControl.Client.Player.Rotation.X -= 360; }
             if (SharpControl.Client.Player.Rotation.X < 0) { SharpControl.Client.Player.Rotation.X += 360; }
-            SharpControl.Client.SendPlayerPositionAndLook();
+            
 
         }
 
@@ -189,21 +213,21 @@ namespace SharpBot
             SharpControl.Client.Player.Rotation.X += 90;
             if (SharpControl.Client.Player.Rotation.X > 360) { SharpControl.Client.Player.Rotation.X -= 360; }
             if (SharpControl.Client.Player.Rotation.X < 0) { SharpControl.Client.Player.Rotation.X += 360; }
-            SharpControl.Client.SendPlayerPositionAndLook();
+            
 
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             SharpControl.Client.Player.Location.Y += 0.5;
-            SharpControl.Client.SendPlayerPositionAndLook();
+            
 
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             SharpControl.Client.Player.Location.Y -= 0.5;
-            SharpControl.Client.SendPlayerPositionAndLook();
+            
 
         }
 
@@ -242,23 +266,36 @@ namespace SharpBot
             SharpControl.Client.Player.SelectedSlot += 1;
             if (SharpControl.Client.Player.SelectedSlot > 9) { SharpControl.Client.Player.SelectedSlot = 0; }
             if (SharpControl.Client.Player.SelectedSlot < 0) { SharpControl.Client.Player.SelectedSlot = 9; }
-            SharpControl.Client.SendPlayerPositionAndLook();
+            
         }
 
         private void butDisconnect_Click(object sender, EventArgs e)
         {
-            Close(); 
+            if (connected)
+            {
+                try
+                {
+                    SharpControl.Client.Disconnect();
+                }
+                catch
+                {
+                    SharpControl.Client.ForceDisconnect();
+                }
+            }
         }
 
         private void User_Control_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
+            if (connected)
             {
-                SharpControl.Client.Disconnect();
-            }
-            catch
-            {
-                SharpControl.Client.ForceDisconnect();
+                try
+                {
+                    SharpControl.Client.Disconnect();
+                }
+                catch
+                {
+                    SharpControl.Client.ForceDisconnect();
+                }
             }
         }
 
@@ -273,7 +310,9 @@ namespace SharpBot
             button10.Enabled = false;
             button12.Enabled = true;
             tp = new Thread(new ThreadStart(() => TP(new Vector3(Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox5.Text)), this)));
+            tp.IsBackground = true;
             tp.Start();
+
         }
         private static void TP(Vector3 vec, User_Control uc)
         {
@@ -316,24 +355,6 @@ namespace SharpBot
             tp.Abort();
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Thread ym = new Thread(new ThreadStart(() => YMove(1)));
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            Thread ym = new Thread(new ThreadStart(() => YMove(-1)));
-        }
-        private void YMove(int i)
-        {
-            int x = 127;
-            while (x > 0)
-            {
-                x--;
-                SharpControl.Client.Player.Location.Y += i;
-                Thread.Sleep(300);
-            }
-        }
+        
     }
 }
