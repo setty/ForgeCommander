@@ -24,6 +24,11 @@ namespace SharpBot
         private void User_Control_Load(object sender, EventArgs e)
         {
             SharpControl.Client.OnChat += new EventHandler<ChatEventArgs>(Client_OnChat);
+            SharpControl.Client.OnDisconnect += new EventHandler(Client_OnDisconnect);
+        }
+        void Client_OnDisconnect(object sender, EventArgs e)
+        {
+            Close();
         }
         void Client_OnChat(object sender, ChatEventArgs e)
         {
@@ -213,14 +218,6 @@ namespace SharpBot
 
         private void butDisconnect_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SharpControl.Client.Disconnect();
-            }
-            catch
-            {
-                SharpControl.Client.ForceDisconnect();
-            }
             Close();
                                   
         }
