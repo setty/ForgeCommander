@@ -56,39 +56,41 @@ namespace SharpBot
             {
                 string result = ""; foreach (string s in e.RawText.Split('§')) { if (!string.IsNullOrEmpty(s)) { result += s.Substring(1); } } e.RawText = result;
             }
-            /*if (e.RawText.Contains(">"))
+            if (e.RawText.Contains(">") && e.RawText.Contains("<"))
             {
                 if (e.RawText.Split('>')[1].Trim().StartsWith("!")) 
                 {
-                    Sendmsg("Is command: " + e.RawText.Split('>')[1]);
-                    string cmdname;
-                    if (e.RawText.Split('>')[1].Remove(0, 1).Contains(' '))
+                    /*try
                     {
-                        cmdname = e.RawText.Split('>')[1].Remove(0, 1).Split(' ')[0];
-                    }
-                    else
-                    {
-                        cmdname = e.RawText.Split('>')[1].Remove(0, 1);
-                    }
-                    Sendmsg("name: " + cmdname);
-                    Command cmd;
-                    string msg = "";
-                    if (e.RawText.Split('>')[1].Remove(0, 1).Contains(' ')) { cmd = Command.Find(e.RawText.Split('>')[1].Remove(0, 5).Split(' ')[0]); Sendmsg("1: " + e.RawText.Split('>')[1].Remove(0, 5).Split(' ')[0]); msg = e.RawText.Remove(e.RawText.Split('>')[1].Length, e.RawText.Split('>')[1].Remove(e.RawText.Split('>')[1].Split(' ')[0].Length + 1).Length + 1); }
-                    else { cmd = Command.Find(e.RawText.Remove(0, 5).Split('>')[1]); Sendmsg("2: " + e.RawText.Remove(0, 5).Split('>')[1]); }
-                    Sendmsg("Checking command");
-                    if (cmd != null)
-                    {
-                        Sendmsg("Executing");
-                        string user = e.RawText.Split('<')[1].Split('>')[0];
-                        if (user.Contains('[') && user.Contains(']'))
+                        string username = e.RawText.Split('<')[1].Split('>')[0];
+                        string command = "";
+                        if (e.RawText.Split('>')[1].Trim().Contains(" "))
                         {
-                            user.Replace("[" + e.RawText.Split('[')[1].Split(']')[0] + "]", "");
+                            string cemd = e.RawText.Split('>')[1];
+                            if (command.StartsWith("!")) { command = cemd.Remove(0, 1); }
                         }
-                        cmd.Use(new Player(user), msg);
-                        Sendmsg(cmd.name + "__" + msg);
+                        else { command = e.RawText.Split('>')[1].Trim().Remove(0, 1); }
+                        string args = e.RawText.Remove(0, username.Length + 4 + command.Length);
+                        Player who = Player.Find(username);
+                        Command cmd = Command.Find(command);
+                        if (cmd == null) { who.SendMessage("Command '" + command + "' not found!"); }
+                        else 
+                        {
+                            if (!cmd.Execute(who, args))
+                            {
+                                who.SendMessage("You are not allowed to use that command!");
+                            }
+                        }
+                    
                     }
+                    catch(Exception err)
+                    {
+                        // laat mensen opsturen als er errors zijn
+                        MessageBox.Show(err.ToString());
+                    }
+                     */
                 }
-            }*/
+            }
             Addline(e.RawText.ToString());
         }
         private void button1_Click(object sender, EventArgs e)
@@ -177,12 +179,13 @@ namespace SharpBot
             //0 - 0 - 45
             if ((rot > 315 && rot <= 360) || (rot > 0 && rot <= 45))
             {
+                SharpControl.Client.Player.Rotation.X = 0;
                 return 0;
             }
-            if (rot > 45 && rot <= 135) { return 1; }
-            if (rot > 135 && rot <= 225) { return 2; }
-            if (rot > 225 && rot < 315) { return 3; }
-            else { return 0; }
+            if (rot > 45 && rot <= 135) { SharpControl.Client.Player.Rotation.X = 90; return 1; }
+            if (rot > 135 && rot <= 225) { SharpControl.Client.Player.Rotation.X = 180; return 2; }
+            if (rot > 225 && rot < 315) { SharpControl.Client.Player.Rotation.X = 270; return 3; }
+            else { SharpControl.Client.Player.Rotation.X = 0; return 0; }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -322,30 +325,33 @@ namespace SharpBot
                 {
                     SharpControl.Client.Player.Location.Y += 1;
 
-                    Thread.Sleep(500);
+                    Thread.Sleep(100);
                 }
                 bool didaction = true;
+                int actions = 0;
                 while (didaction)
                 {
+                    actions = 0;
                     didaction = false;
-                    if ((int)vec.X < (int)SharpControl.Client.Player.Location.X) { SharpControl.Client.Player.Location.X--; didaction = true; }
-                    if ((int)vec.X > (int)SharpControl.Client.Player.Location.X) { SharpControl.Client.Player.Location.X++; didaction = true; }
-                    if ((int)vec.Z < (int)SharpControl.Client.Player.Location.Z) { SharpControl.Client.Player.Location.Z--; didaction = true; }
-                    if ((int)vec.Z > (int)SharpControl.Client.Player.Location.Z) { SharpControl.Client.Player.Location.Z++; didaction = true; }
-                    Thread.Sleep(500);
+                    if ((int)vec.X < (int)SharpControl.Client.Player.Location.X) { SharpControl.Client.Player.Location.X--; didaction = true; actions++; }
+                    if ((int)vec.X > (int)SharpControl.Client.Player.Location.X) { SharpControl.Client.Player.Location.X++; didaction = true; actions++; }
+                    if ((int)vec.Z < (int)SharpControl.Client.Player.Location.Z) { SharpControl.Client.Player.Location.Z--; didaction = true; actions++; }
+                    if ((int)vec.Z > (int)SharpControl.Client.Player.Location.Z) { SharpControl.Client.Player.Location.Z++; didaction = true; actions++; }
+                    Thread.Sleep(100 * actions);
                 }
                 int godown = (int)(SharpControl.Client.Player.Location.Y - vec.Y);
                 while (godown > 0)
                 {
                     SharpControl.Client.Player.Location.Y--;
 
-                    Thread.Sleep(500);
+                    Thread.Sleep(100);
                     godown -= 1;
                 }
             }
             catch { tp.Abort(); }
             uc.button12.Enabled = false;
             uc.button10.Enabled = true;
+            uc.Recenter_Location();
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -357,6 +363,7 @@ namespace SharpBot
 
         private void User_Control_KeyDown(object sender, KeyEventArgs e)
         {
+            Recenter_Location();
             if (e.KeyCode == Keys.Down)
             {
 
@@ -387,6 +394,27 @@ namespace SharpBot
                 if (SharpControl.Client.Player.Rotation.X < 0) { SharpControl.Client.Player.Rotation.X += 360; }
             }
             
+        }
+        // Recenter location button, sets user position back to x.5 and y.5 (in center of block) and sets head rotation to 0, 90, 180, 270
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Recenter_Location();
+        }
+        public void Recenter_Location()
+        {
+            //automatic head rotation fix:
+            GetWalkway();
+            //Fix center block ._.
+            // X
+            double xfix = SharpControl.Client.Player.Location.X - (int)SharpControl.Client.Player.Location.X - 0.5;
+            SharpControl.Client.Player.Location.X -= xfix;
+            // Z
+            double zfix = SharpControl.Client.Player.Location.Z - (int)SharpControl.Client.Player.Location.Z - 0.5;
+            SharpControl.Client.Player.Location.Z -= zfix;
+
+            // Y = if you are half-step above/below a block, it'll fix it to central block too
+            double yfix = SharpControl.Client.Player.Location.Y - (int)SharpControl.Client.Player.Location.Y - 0.5;
+            SharpControl.Client.Player.Location.Y -= yfix;
         }
     }
 }

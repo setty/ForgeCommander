@@ -8,14 +8,16 @@ namespace SharpBot
 {
     public class Player
     {
+        public static List<Player> all = new List<Player>();
         public string Playername;
         public bool IsOp;
         public Player(string name)
         {
             Playername = name;
             IsOp = GetOp(name);
+            all.Add(this);
         }
-        public bool GetOp(string name)
+        public static bool GetOp(string name)
         {
             if (!Directory.Exists("bot")) { Directory.CreateDirectory("bot"); }
             if (!File.Exists("bot/op.txt")) { File.CreateText("bot/op.txt").Close(); return false; }
@@ -28,7 +30,7 @@ namespace SharpBot
             }
             return false;
         }
-        public bool SetOp(string name)
+        public static bool SetOp(string name)
         {
             if (!Directory.Exists("bot")) { Directory.CreateDirectory("bot"); }
             if (!File.Exists("bot/op.txt")) { File.CreateText("bot/op.txt").Close(); }
@@ -39,7 +41,7 @@ namespace SharpBot
             }
             return false;
         }
-        public bool RemoveOp(string name)
+        public static bool RemoveOp(string name)
         {
             List<string> lines = new List<string>();
             if (!Directory.Exists("bot")) { Directory.CreateDirectory("bot"); }
@@ -78,6 +80,18 @@ namespace SharpBot
         public static string[] oplist()
         {
             return File.ReadAllLines("bot/ops.txt");
+        }
+        public static Player Find(string name)
+        {
+            foreach (Player p in Player.all)
+            {
+                if (p.Playername == name)
+                {
+                    return p;
+                }
+            }
+            Player who = new Player(name);
+            return who;
         }
     }
 }

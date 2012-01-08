@@ -51,6 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CmdHelp.cs" />
+    <Compile Include="Commands\CmdOp.cs" />
+    <Compile Include="Commands\CmdRain.cs" />
+    <Compile Include="Commands\CmdTime.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -58,6 +61,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Misc\Color.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

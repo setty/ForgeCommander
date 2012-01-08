@@ -5,6 +5,7 @@ using System.Text;
 using LibMinecraft.Client;
 using LibMinecraft.Model;
 using LibMinecraft.Server;
+using SharpBot.Misc;
 
 namespace SharpBot
 {
@@ -30,6 +31,14 @@ namespace SharpBot
             Client = Connect(username, password, server);
             Client.Player.Location.Y -= 0.5;
             Client.SendPlayerPositionAndLook();
+        }
+        /// <summary>
+        /// Execute commands from SharpBot
+        /// </summary>
+        /// <param name="line">you must enter a / yourself!</param>
+        public static void ExecuteCommand(string line)
+        {
+            Client.SendChat(line);
         }
     }
 }

@@ -5,10 +5,11 @@ using System.Text;
 
 namespace SharpBot.Commands
 {
-    class CmdHelp : Command
+    class CmdCOMMAND : Command
     {
-        public override string name { get { return ""; } }
+        public override string name { get { return "COMMAND"; } }
         public override string shortcut { get { return ""; } }
+        public override bool opperm { get { return false; } }
         public override void Use(Player p, string message)
         {
 
