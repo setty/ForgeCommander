@@ -214,14 +214,14 @@ namespace SharpBot
 
         private void butDisconnect_Click(object sender, EventArgs e)
         {
-            SharpControl.Client.Disconnect();
+            SharpControl.Client.ForceDisconnect();
             Close();
                                   
         }
 
         private void User_Control_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SharpControl.Client.Disconnect();
+            SharpControl.Client.ForceDisconnect();
         }
     }
 }
