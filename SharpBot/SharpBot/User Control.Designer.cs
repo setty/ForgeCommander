@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.ChatBox1 = new System.Windows.Forms.ListBox();
             this.btnW = new System.Windows.Forms.Button();
             this.btnS = new System.Windows.Forms.Button();
             this.btnA = new System.Windows.Forms.Button();
@@ -85,13 +85,13 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // listBox1
+            // ChatBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(385, 225);
-            this.listBox1.TabIndex = 2;
+            this.ChatBox1.FormattingEnabled = true;
+            this.ChatBox1.Location = new System.Drawing.Point(12, 12);
+            this.ChatBox1.Name = "ChatBox1";
+            this.ChatBox1.Size = new System.Drawing.Size(385, 225);
+            this.ChatBox1.TabIndex = 2;
             // 
             // btnW
             // 
@@ -302,7 +302,7 @@
             this.Controls.Add(this.btnA);
             this.Controls.Add(this.btnS);
             this.Controls.Add(this.btnW);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.ChatBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "User_Control";
             this.Text = "Control panel";
@@ -324,7 +324,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox ChatBox1;
         private System.Windows.Forms.Button btnW;
         private System.Windows.Forms.Button btnS;
         private System.Windows.Forms.Button btnA;

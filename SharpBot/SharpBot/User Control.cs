@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using SharpBot.Commands;
+using LibMinecraft.Client;
+using LibMinecraft.Model;
+using LibMinecraft.Server;
 
 namespace SharpBot
 {
@@ -20,15 +23,30 @@ namespace SharpBot
         }
         private void User_Control_Load(object sender, EventArgs e)
         {
-            //addline(line); upon incoming chat
+            SharpControl.Client.OnChat += new EventHandler<ChatEventArgs>(Client_OnChat);
+        }
+        void Client_OnChat(object sender, ChatEventArgs e)
+        {
+            Addline(e.RawText.ToString());
         }
         private void button1_Click(object sender, EventArgs e)
         {
             Sendmsg(textBox1.Text);
         }
-        private void Addline(string line)
+        delegate void AddChatAsyncDelegate(string Chat);
+        void Addline(string Chat)
         {
-            //add to listbox
+            if (!ChatBox1.InvokeRequired)
+            {
+                ChatBox1.Items.Add(Chat);
+                ChatBox1.SelectedIndex = ChatBox1.Items.Count - 1;
+                ChatBox1.SelectedIndex = -1;
+            }
+            else
+            {
+                AddChatAsyncDelegate d = new AddChatAsyncDelegate(Addline);
+                ChatBox1.Invoke(d, Chat);
+            }
         }
         private void Sendmsg(string text)
         {
