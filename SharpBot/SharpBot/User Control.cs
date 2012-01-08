@@ -354,7 +354,5 @@ namespace SharpBot
             button10.Enabled = true;
             tp.Abort();
         }
-
-        
     }
 }
