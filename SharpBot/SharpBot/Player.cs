@@ -34,12 +34,12 @@ namespace SharpBot
         {
             if (!Directory.Exists("bot")) { Directory.CreateDirectory("bot"); }
             if (!File.Exists("bot/op.txt")) { File.CreateText("bot/op.txt").Close(); }
-            if (!File.ReadAllText("bot/op.txt").Contains(name.ToLower()))
+            foreach (string l in File.ReadAllLines("bot/op.txt"))
             {
-                File.AppendAllText("bot/op.txt", name + "\r\n");
-                return true;
+                if (l.ToLower() == name.ToLower()) { return false; }
             }
-            return false;
+            File.AppendAllText("bot/op.txt", name + Environment.NewLine);
+            return true;
         }
         public static bool RemoveOp(string name)
         {

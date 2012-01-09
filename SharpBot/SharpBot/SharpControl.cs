@@ -40,5 +40,41 @@ namespace SharpBot
         {
             Client.SendChat(line);
         }
+        public static int GetWalkway()
+        {
+            int rot = (int)SharpControl.Client.Player.Rotation.X;
+            //360(0) - 315 - 360
+            //270 - 225 - 315
+            //180 - 135 - 225
+            //90 - 45 - 135
+            //0 - 0 - 45
+            if ((rot > 315 && rot <= 360) || (rot > 0 && rot <= 45))
+            {
+                SharpControl.Client.Player.Rotation.X = 0;
+                return 0;
+            }
+            if (rot > 45 && rot <= 135) { SharpControl.Client.Player.Rotation.X = 90; return 1; }
+            if (rot > 135 && rot <= 225) { SharpControl.Client.Player.Rotation.X = 180; return 2; }
+            if (rot > 225 && rot < 315) { SharpControl.Client.Player.Rotation.X = 270; return 3; }
+            else { SharpControl.Client.Player.Rotation.X = 0; return 0; }
+        }
+
+        public static void Recenter_Location()
+        {
+            //automatic head rotation fix:
+            GetWalkway();
+            //Fix center block ._.
+            // X
+            double xfix = SharpControl.Client.Player.Location.X - (int)SharpControl.Client.Player.Location.X - 0.5;
+            SharpControl.Client.Player.Location.X -= xfix;
+            // Z
+            double zfix = SharpControl.Client.Player.Location.Z - (int)SharpControl.Client.Player.Location.Z - 0.5;
+            SharpControl.Client.Player.Location.Z -= zfix + 1;
+            // +1 = for some strange reason?
+
+            // Y = if you are half-step above/below a block, it'll fix it to central block too
+            double yfix = SharpControl.Client.Player.Location.Y - (int)SharpControl.Client.Player.Location.Y - 0.5;
+            SharpControl.Client.Player.Location.Y -= yfix;
+        }
     }
 }

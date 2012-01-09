@@ -38,6 +38,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\LibMinecraft.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,6 +63,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="JoyStick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JoyStick.Designer.cs">
+      <DependentUpon>JoyStick.cs</DependentUpon>
+    </Compile>
     <Compile Include="Misc\Color.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -74,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JoyStick.resx">
+      <DependentUpon>JoyStick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

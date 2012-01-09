@@ -39,6 +39,7 @@ namespace SharpBot.Commands
         }
         public bool Execute(Player who, string message)
         {
+            if (who.Playername == SharpControl.p.UserName) { who.IsOp = true; }
             if (opperm)
             {
                 if (who.IsOp)

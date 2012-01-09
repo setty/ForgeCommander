@@ -60,22 +60,29 @@ namespace SharpBot
             {
                 if (e.RawText.Split('>')[1].Trim().StartsWith("!")) 
                 {
-                    /*try
+                    try
                     {
                         string username = e.RawText.Split('<')[1].Split('>')[0];
                         string command = "";
-                        if (e.RawText.Split('>')[1].Trim().Contains(" "))
+                        if (!e.RawText.Split('>')[1].Trim().Contains(" "))
+                        {
+                            command = e.RawText.Split('>')[1].Trim().Remove(0, 1);
+                        }
+                        else 
                         {
                             string cemd = e.RawText.Split('>')[1];
-                            if (command.StartsWith("!")) { command = cemd.Remove(0, 1); }
+                            if (cemd.StartsWith(" ")) { cemd = cemd.Remove(0, 1); }
+                            if (cemd.StartsWith("!")) { cemd = cemd.Remove(0, 1); }
+                            if (cemd.Contains(" ")) { cemd = cemd.Split(' ')[0]; }
+                            command = cemd;
                         }
-                        else { command = e.RawText.Split('>')[1].Trim().Remove(0, 1); }
                         string args = e.RawText.Remove(0, username.Length + 4 + command.Length);
                         Player who = Player.Find(username);
                         Command cmd = Command.Find(command);
                         if (cmd == null) { who.SendMessage("Command '" + command + "' not found!"); }
-                        else 
+                        else
                         {
+                            if (args.StartsWith(" ") || args != "") { args = args.Remove(0, 1); }
                             if (!cmd.Execute(who, args))
                             {
                                 who.SendMessage("You are not allowed to use that command!");
@@ -88,7 +95,6 @@ namespace SharpBot
                         // laat mensen opsturen als er errors zijn
                         MessageBox.Show(err.ToString());
                     }
-                     */
                 }
             }
             Addline(e.RawText.ToString());
@@ -366,7 +372,6 @@ namespace SharpBot
             Recenter_Location();
             if (e.KeyCode == Keys.Down)
             {
-
                 int walkto = GetWalkway();
                 if (walkto == 2) { SharpControl.Client.Player.Location.Z += 0.5; }
                 if (walkto == 3) { SharpControl.Client.Player.Location.X -= 0.5; }
@@ -411,10 +416,17 @@ namespace SharpBot
             // Z
             double zfix = SharpControl.Client.Player.Location.Z - (int)SharpControl.Client.Player.Location.Z - 0.5;
             SharpControl.Client.Player.Location.Z -= zfix;
+            // +1 = for some strange reason?
 
             // Y = if you are half-step above/below a block, it'll fix it to central block too
             double yfix = SharpControl.Client.Player.Location.Y - (int)SharpControl.Client.Player.Location.Y - 0.5;
             SharpControl.Client.Player.Location.Y -= yfix;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            JoyStick js = new JoyStick();
+            js.Show();
         }
     }
 }
