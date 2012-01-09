@@ -5,22 +5,22 @@ using System.Text;
 
 namespace SharpBot.Commands
 {
-    class CmdRain : Command
+    class CmdSay : Command
     {
-        public override string name { get { return "rain"; } }
+        public override string name { get { return "Say"; } }
         public override string shortcut { get { return ""; } }
-        public override bool opperm { get { return true; } }
+        public override bool opperm { get { return false; } }
         public override void Use(Player p, string message)
         {
-            if (message.Length > 0)
+            if (message == "" || message == null)
             {
                 Help(p); return;
             }
-            SharpControl.ExecuteCommand("/toggledownfall");
+            SharpControl.Client.SendChat(message);
         }
         public override void Help(Player p)
         {
-            p.SendMessage("!rain - toggles rain and snow");
+            p.SendMessage("!say <message> - Sends chatmessage");
         }
     }
 }

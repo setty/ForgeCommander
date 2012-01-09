@@ -316,6 +316,8 @@ namespace SharpBot
         public static Thread tp;
         private void button10_Click_1(object sender, EventArgs e)
         {
+            SharpControl.walkbool = false;
+            SharpControl.teleporting = true;
             button10.Enabled = false;
             button12.Enabled = true;
             tp = new Thread(new ThreadStart(() => TP(new Vector3(Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox5.Text)), this)));
@@ -357,6 +359,7 @@ namespace SharpBot
             catch { tp.Abort(); }
             uc.button12.Enabled = false;
             uc.button10.Enabled = true;
+            SharpControl.teleporting = false;
             uc.Recenter_Location();
         }
 
@@ -365,6 +368,7 @@ namespace SharpBot
             button12.Enabled = false;
             button10.Enabled = true;
             tp.Abort();
+            SharpControl.teleporting = false;
         }
 
         private void User_Control_KeyDown(object sender, KeyEventArgs e)

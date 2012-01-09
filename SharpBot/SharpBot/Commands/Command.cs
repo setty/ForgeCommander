@@ -24,7 +24,9 @@ namespace SharpBot.Commands
             all.Add(new CmdMove());
             all.Add(new CmdOp());
             all.Add(new CmdRain());
+            all.Add(new CmdSay());
             all.Add(new CmdTime());
+            all.Add(new CmdWalk()); 
         }
         #endregion
         #region endpart

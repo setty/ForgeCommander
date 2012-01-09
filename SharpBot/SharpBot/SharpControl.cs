@@ -11,6 +11,8 @@ namespace SharpBot
 {
     public static class SharpControl
     {
+        public static bool teleporting = false;
+        public static bool walkbool = false;
         public static MultiplayerClient Client = new MultiplayerClient();
         public static MinecraftServer Server = new MinecraftServer();
         public static User p = new User();

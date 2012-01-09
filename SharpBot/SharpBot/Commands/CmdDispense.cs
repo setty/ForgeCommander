@@ -16,7 +16,7 @@ namespace SharpBot.Commands
         }
         public override void Help(Player p)
         {
-            p.SendMessage("/i <itemid> <ammount> - throws item out of the bots mouth");
+            p.SendMessage("!i <itemid> <ammount> - throws item out of the bots mouth");
             p.SendMessage("gives nothing on invalid ID");
         }
     }

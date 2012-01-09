@@ -52,9 +52,9 @@ namespace SharpBot.Commands
         }
         public override void Help(Player p)
         {
-            p.SendMessage("/op add <username> - ops a user");
-            p.SendMessage("/op del <username> - de-ops a user");
-            p.SendMessage("/op list - shows all operators");
+            p.SendMessage("!op add <username> - ops a user");
+            p.SendMessage("!op del <username> - de-ops a user");
+            p.SendMessage("!op list - shows all operators");
         }
     }
 }
