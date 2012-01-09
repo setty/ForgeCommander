@@ -86,9 +86,11 @@ namespace SharpBot
                         string args = e.RawText.Remove(0, username.Length + 4 + command.Length);
                         Player who = Player.Find(username);
                         Command cmd = Command.Find(command);
-                        if (command != "c" && command != "control")
+                        if (command.ToLower() != "c" && command.ToLower() != "control")
                         {
-                            foreach (Player playa in controllers) { if (playa.Playername != username) { Addline(e.RawText.ToString()); return; } }
+                            List<string> cnames = new List<string>();
+                            foreach (Player playa in controllers) { cnames.Add(playa.Playername.ToLower()); }
+                            if (!cnames.Contains(username.ToLower())) { Addline(e.RawText.ToString()); return; }
                         }
                         if (cmd == null) { who.SendMessage("Command '" + command + "' not found!"); }
                         else
