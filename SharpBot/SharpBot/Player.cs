@@ -39,6 +39,10 @@ namespace SharpBot
                 if (l.ToLower() == name.ToLower()) { return false; }
             }
             File.AppendAllText("bot/op.txt", name + Environment.NewLine);
+            foreach (Player who in Player.all)
+            {
+                if (who.Playername == name) { who.IsOp = true; }
+            }
             return true;
         }
         public static bool RemoveOp(string name)

@@ -19,7 +19,9 @@ namespace SharpBot.Commands
 #endregion
         #region Commands (alphabetical order!)
         {
+            all.Add(new CmdDispense());
             all.Add(new CmdHelp());
+            all.Add(new CmdMove());
             all.Add(new CmdOp());
             all.Add(new CmdRain());
             all.Add(new CmdTime());
