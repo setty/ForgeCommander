@@ -20,6 +20,7 @@ namespace SharpBot
         public bool connected = true;
         public short lasthealth = 0;
         public bool closed = false;
+        public static List<Player> controllers = new List<Player>();
         public User_Control()
         {
             InitializeComponent();
@@ -85,6 +86,10 @@ namespace SharpBot
                         string args = e.RawText.Remove(0, username.Length + 4 + command.Length);
                         Player who = Player.Find(username);
                         Command cmd = Command.Find(command);
+                        if (command != "c" && command != "control")
+                        {
+                            foreach (Player playa in controllers) { if (playa.Playername != username) { Addline(e.RawText.ToString()); return; } }
+                        }
                         if (cmd == null) { who.SendMessage("Command '" + command + "' not found!"); }
                         else
                         {

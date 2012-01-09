@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CmdControl.cs" />
     <Compile Include="Commands\CmdDispense.cs" />
     <Compile Include="Commands\CmdHelp.cs" />
     <Compile Include="Commands\CmdMove.cs" />
