@@ -20,7 +20,9 @@ namespace SharpBot.Commands
         #region Commands (alphabetical order!)
         {
             all.Add(new CmdControl());
+            all.Add(new CmdDisconnect());
             all.Add(new CmdDispense());
+            all.Add(new CmdGamemode());
             all.Add(new CmdHelp());
             all.Add(new CmdMove());
             all.Add(new CmdOp());

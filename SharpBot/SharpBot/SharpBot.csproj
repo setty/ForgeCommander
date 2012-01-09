@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CmdControl.cs" />
+    <Compile Include="Commands\CmdDisconnect.cs" />
     <Compile Include="Commands\CmdDispense.cs" />
+    <Compile Include="Commands\CmdGamemode.cs" />
     <Compile Include="Commands\CmdHelp.cs" />
     <Compile Include="Commands\CmdMove.cs" />
     <Compile Include="Commands\CmdOp.cs" />
