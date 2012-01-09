@@ -9,7 +9,7 @@ namespace SharpBot.Commands
     {
         public override string name { get { return "Say"; } }
         public override string shortcut { get { return ""; } }
-        public override bool opperm { get { return false; } }
+        public override bool opperm { get { return true; } }
         public override void Use(Player p, string message)
         {
             if (message == "" || message == null)

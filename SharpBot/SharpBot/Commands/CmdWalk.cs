@@ -11,7 +11,7 @@ namespace SharpBot.Commands
         
         public override string name { get { return "walk"; } }
         public override string shortcut { get { return "w"; } }
-        public override bool opperm { get { return false; } }
+        public override bool opperm { get { return true; } }
         public override void Use(Player p, string message)
         {
             if (!SharpControl.teleporting)
@@ -38,27 +38,27 @@ namespace SharpBot.Commands
                     switch (speedvar)
                     {
                         case 1:
-                            Thread walkinf500 = new Thread(new ThreadStart(() => CmdMove.WalkInf(500)));
+                            Thread walkinf500 = new Thread(new ThreadStart(() => WalkInf(500)));
                             walkinf500.IsBackground = true;
                             walkinf500.Start();
                             break;
                         case 2:
-                            Thread walkinf400 = new Thread(new ThreadStart(() => CmdMove.WalkInf(400)));
+                            Thread walkinf400 = new Thread(new ThreadStart(() => WalkInf(400)));
                             walkinf400.IsBackground = true;
                             walkinf400.Start();
                             break;
                         case 3:
-                            Thread walkinf300 = new Thread(new ThreadStart(() => CmdMove.WalkInf(300)));
+                            Thread walkinf300 = new Thread(new ThreadStart(() => WalkInf(300)));
                             walkinf300.IsBackground = true;
                             walkinf300.Start();
                             break;
                         case 4:
-                            Thread walkinf200 = new Thread(new ThreadStart(() => CmdMove.WalkInf(200)));
+                            Thread walkinf200 = new Thread(new ThreadStart(() => WalkInf(200)));
                             walkinf200.IsBackground = true;
                             walkinf200.Start();
                             break;
                         case 5:
-                            Thread walkinf100 = new Thread(new ThreadStart(() => CmdMove.WalkInf(100)));
+                            Thread walkinf100 = new Thread(new ThreadStart(() => WalkInf(100)));
                             walkinf100.IsBackground = true;
                             walkinf100.Start();
                             break;
@@ -76,6 +76,17 @@ namespace SharpBot.Commands
             p.SendMessage("!walk <speed> - Walks forward till stopped.");
             p.SendMessage("!walk stop - Stops walking");
         }
-        
+        public static void WalkInf(int delay)
+        {
+            while (SharpControl.walkbool)
+            {
+                int walkto = SharpControl.GetWalkway();
+                if (walkto == 0) { SharpControl.Client.Player.Location.Z += 1; }
+                if (walkto == 1) { SharpControl.Client.Player.Location.X -= 1; }
+                if (walkto == 2) { SharpControl.Client.Player.Location.Z -= 1; }
+                if (walkto == 3) { SharpControl.Client.Player.Location.X += 1; }
+                Thread.Sleep(delay);
+            }
+        }
     }
 }

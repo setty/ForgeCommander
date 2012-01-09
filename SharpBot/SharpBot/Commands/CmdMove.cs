@@ -55,18 +55,6 @@ namespace SharpBot.Commands
             p.SendMessage("!move up <ammount> - move up");
             p.SendMessage("!move down <ammount> - move down");
         }
-        public static void WalkInf(int delay)
-        {
-            while (SharpControl.walkbool)
-            {
-                int walkto = SharpControl.GetWalkway();
-                if (walkto == 0) { SharpControl.Client.Player.Location.Z += 1; }
-                if (walkto == 1) { SharpControl.Client.Player.Location.X -= 1; }
-                if (walkto == 2) { SharpControl.Client.Player.Location.Z -= 1; }
-                if (walkto == 3) { SharpControl.Client.Player.Location.X += 1; }
-                Thread.Sleep(delay);
-            }
-        }
         public static void Walk(bool forward, string times)
         {
             double time = Convert.ToDouble(times);

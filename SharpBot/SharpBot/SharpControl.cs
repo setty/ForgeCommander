@@ -32,7 +32,8 @@ namespace SharpBot
         {
             Client = Connect(username, password, server);
             Client.Player.Location.Y -= 0.5;
-            Client.SendPlayerPositionAndLook();
+            Client.Player.Rotation.Y = 0;
+            Recenter_Location();
         }
         /// <summary>
         /// Execute commands from SharpBot
@@ -76,7 +77,7 @@ namespace SharpBot
 
             // Y = if you are half-step above/below a block, it'll fix it to central block too
             double yfix = SharpControl.Client.Player.Location.Y - (int)SharpControl.Client.Player.Location.Y - 0.5;
-            SharpControl.Client.Player.Location.Y -= yfix;
+            SharpControl.Client.Player.Location.Y -= yfix + 0.5;
         }
     }
 }

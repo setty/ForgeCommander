@@ -83,7 +83,9 @@ namespace SharpBot
         }
         public static string[] oplist()
         {
-            return File.ReadAllLines("bot/ops.txt");
+            if (!Directory.Exists("bot")) { Directory.CreateDirectory("bot"); }
+            if (!File.Exists("bot/op.txt")) { File.CreateText("bot/op.txt").Close(); string[] ops = { "No ops yet!" }; return ops; }
+            return File.ReadAllLines("bot/op.txt");
         }
         public static Player Find(string name)
         {

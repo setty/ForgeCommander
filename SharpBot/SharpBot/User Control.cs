@@ -29,8 +29,14 @@ namespace SharpBot
             Command.Init();
             SharpControl.Client.OnChat += new EventHandler<ChatEventArgs>(Client_OnChat);
             SharpControl.Client.OnDisconnect += new EventHandler(Client_OnDisconnect);
+            Thread fixhead = new Thread(new ThreadStart(FixHeads));
+            fixhead.Start();
         }
-
+        public void FixHeads()
+        {
+            Thread.Sleep(5000);
+            SharpControl.Client.Player.Rotation.Y = 0;
+        }
         void Client_OnDisconnect(object sender, EventArgs e)
         {
             connected = false;
@@ -421,10 +427,11 @@ namespace SharpBot
             double zfix = SharpControl.Client.Player.Location.Z - (int)SharpControl.Client.Player.Location.Z - 0.5;
             SharpControl.Client.Player.Location.Z -= zfix;
             // +1 = for some strange reason?
-
             // Y = if you are half-step above/below a block, it'll fix it to central block too
             double yfix = SharpControl.Client.Player.Location.Y - (int)SharpControl.Client.Player.Location.Y - 0.5;
-            SharpControl.Client.Player.Location.Y -= yfix;
+            SharpControl.Client.Player.Location.Y -= yfix + 0.5;
+            // Fix head rotation Y
+            SharpControl.Client.Player.Rotation.Y = 0;
         }
 
         private void button11_Click(object sender, EventArgs e)

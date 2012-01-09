@@ -18,6 +18,8 @@ namespace SharpBot.Commands
             {
                 string saystring = "";
                 foreach (string w in Player.oplist()) { saystring += w + ", "; }
+                saystring.Remove(saystring.Length - 2);
+                saystring += ".";
                 p.SendMessage(saystring);
                 return;
             }

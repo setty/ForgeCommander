@@ -1,6 +1,6 @@
 ﻿/*
  * you can get color like so: p.SendMessage(Color.id_0 + " message");
- * or you can get it like this: p.SendMessage(Color.Get((char)0) + " message");
+ * or you can get it like this: p.SendMessage(Color.Get('0') + " message");
 */
 using System;
 using System.Collections.Generic;
