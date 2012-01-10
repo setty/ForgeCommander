@@ -24,6 +24,7 @@ namespace SharpBot.Commands
             all.Add(new CmdDispense());
             all.Add(new CmdGamemode());
             all.Add(new CmdHelp());
+            all.Add(new CmdInfo());
             all.Add(new CmdMove());
             all.Add(new CmdOp());
             all.Add(new CmdRain());

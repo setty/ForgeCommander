@@ -24,6 +24,7 @@ namespace SharpBot
         public User_Control()
         {
             InitializeComponent();
+            
         }
         private void User_Control_Load(object sender, EventArgs e)
         {
@@ -32,6 +33,7 @@ namespace SharpBot
             SharpControl.Client.OnDisconnect += new EventHandler(Client_OnDisconnect);
             Thread fixhead = new Thread(new ThreadStart(FixHeads));
             fixhead.Start();
+            
         }
         public void FixHeads()
         {

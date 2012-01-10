@@ -57,6 +57,7 @@
     <Compile Include="Commands\CmdDispense.cs" />
     <Compile Include="Commands\CmdGamemode.cs" />
     <Compile Include="Commands\CmdHelp.cs" />
+    <Compile Include="Commands\CmdInfo.cs" />
     <Compile Include="Commands\CmdMove.cs" />
     <Compile Include="Commands\CmdOp.cs" />
     <Compile Include="Commands\CmdRain.cs" />
