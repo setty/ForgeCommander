@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace SharpBot.Commands
 {
@@ -13,6 +14,28 @@ namespace SharpBot.Commands
         public override void Use(Player p, string message)
         {
             SharpControl.Client.SendChat("I'm disconnecting. Cya all!");
+            Thread dc = new Thread(new ThreadStart(DisconnectTurning));
+            dc.Start();
+        }
+        public override void Help(Player p)
+        {
+            p.SendMessage("!disconnect - Disconnects the bot");
+        }
+        public static void DisconnectTurning()
+        {
+            double speed = 0;
+            try
+            {
+                while (speed < 250)
+                {
+                    speed++;
+                    int countmedown = 3;
+                    while (countmedown > 0)
+                    {
+                        SharpControl.Client.Player.Rotation.X += speed;
+                        countmedown--;
+                    }
+                }
                 try
                 {
                     SharpControl.Client.Disconnect();
@@ -21,11 +44,18 @@ namespace SharpBot.Commands
                 {
                     SharpControl.Client.ForceDisconnect();
                 }
-            
-        }
-        public override void Help(Player p)
-        {
-            p.SendMessage("!disconnect - Disconnects the bot");
+            }
+            catch
+            {
+                try
+                {
+                    SharpControl.Client.Disconnect();
+                }
+                catch
+                {
+                    SharpControl.Client.ForceDisconnect();
+                }
+            }
         }
     }
 }
