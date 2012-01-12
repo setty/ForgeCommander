@@ -37,6 +37,10 @@
             this.txtServer = new System.Windows.Forms.TextBox();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ServerBox = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUser
@@ -117,11 +121,51 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Port";
             // 
+            // ServerBox
+            // 
+            this.ServerBox.FormattingEnabled = true;
+            this.ServerBox.Location = new System.Drawing.Point(310, 38);
+            this.ServerBox.Name = "ServerBox";
+            this.ServerBox.Size = new System.Drawing.Size(280, 95);
+            this.ServerBox.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(307, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Server list";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(515, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(148, 117);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Save";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 148);
+            this.ClientSize = new System.Drawing.Size(602, 148);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.ServerBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.txtServer);
@@ -150,6 +194,10 @@
         private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox ServerBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

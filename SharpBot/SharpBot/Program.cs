@@ -17,6 +17,7 @@ namespace SharpBot
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        
+        public static string saveservername = "";
+        public static bool didsavename = false;
     }
 }
