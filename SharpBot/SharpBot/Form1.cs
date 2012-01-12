@@ -122,5 +122,20 @@ namespace SharpBot
             File.WriteAllLines("bot/servers.txt", servers.ToArray());
 
         }
+
+        private void ServerBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ServerBox.SelectedIndex == -1) { return; }
+            string name = ServerBox.Items[ServerBox.SelectedIndex].ToString();
+            foreach (string stringvar in servers.ToArray())
+            {
+                if (stringvar.Contains(name))
+                {
+                    txtServer.Text = stringvar.Split('|')[1];
+                    txtPort.Text = stringvar.Split('|')[2];
+                }
+            }
+
+        }
     }
 }

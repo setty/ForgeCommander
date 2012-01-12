@@ -128,6 +128,7 @@
             this.ServerBox.Name = "ServerBox";
             this.ServerBox.Size = new System.Drawing.Size(280, 95);
             this.ServerBox.TabIndex = 9;
+            this.ServerBox.SelectedIndexChanged += new System.EventHandler(this.ServerBox_SelectedIndexChanged);
             // 
             // label5
             // 

@@ -20,6 +20,7 @@ namespace SharpBot
         {
             Program.didsavename = false;
             if (textBox1.Text == "" || textBox1.Text == null) { MessageBox.Show("Please enter a server name!"); return; }
+            if (textBox1.Text.Contains("|")) { MessageBox.Show("The name isn't allowed to contain: |"); return; }
             bool alreadyin = false;
             foreach (string stringvar in Form1.servers)
             {
