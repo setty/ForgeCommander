@@ -14,7 +14,7 @@ namespace SharpBot
 {
     public partial class Form1 : Form
     {
-        public List<string> servers = new List<string>();
+        public static List<string> servers = new List<string>();
         
         public Form1()
         {
