@@ -18,6 +18,7 @@ namespace SharpBot
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Program.didsavename = false;
             if (textBox1.Text == "" || textBox1.Text == null) { MessageBox.Show("Please enter a server name!"); return; }
             bool alreadyin = false;
             foreach (string stringvar in Form1.servers)
@@ -27,7 +28,7 @@ namespace SharpBot
                     alreadyin = true;
                 }
             }
-            if (!alreadyin) { MessageBox.Show("This name is already taken!"); return; }
+            if (alreadyin) { MessageBox.Show("This name is already taken!"); return; }
             Program.saveservername = textBox1.Text;
             Program.didsavename = true;
             Close();

@@ -101,5 +101,26 @@ namespace SharpBot
                 File.WriteAllLines("bot/servers.txt", servers.ToArray());
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ServerBox.SelectedIndex == -1) { return; }
+            string name = ServerBox.Items[ServerBox.SelectedIndex].ToString();
+            foreach (string stringvar in servers.ToArray())
+            {
+                if (stringvar.Contains(name))
+                {
+                    servers.Remove(stringvar);
+                }
+            }
+            ServerBox.Items.Clear();
+            foreach (string line in servers)
+            {
+
+                ServerBox.Items.Add(line.Split('|')[0]);
+            }
+            File.WriteAllLines("bot/servers.txt", servers.ToArray());
+
+        }
     }
 }
