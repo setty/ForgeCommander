@@ -59,16 +59,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openCompactControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendChatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forgeWareIncToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.statusStrip.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 245);
+            this.groupBox1.Location = new System.Drawing.Point(12, 260);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(385, 53);
             this.groupBox1.TabIndex = 0;
@@ -96,7 +107,7 @@
             // ChatBox1
             // 
             this.ChatBox1.FormattingEnabled = true;
-            this.ChatBox1.Location = new System.Drawing.Point(12, 12);
+            this.ChatBox1.Location = new System.Drawing.Point(12, 27);
             this.ChatBox1.Name = "ChatBox1";
             this.ChatBox1.Size = new System.Drawing.Size(385, 225);
             this.ChatBox1.TabIndex = 2;
@@ -104,7 +115,7 @@
             // 
             // btnW
             // 
-            this.btnW.Location = new System.Drawing.Point(447, 12);
+            this.btnW.Location = new System.Drawing.Point(447, 27);
             this.btnW.Name = "btnW";
             this.btnW.Size = new System.Drawing.Size(37, 35);
             this.btnW.TabIndex = 2;
@@ -114,7 +125,7 @@
             // 
             // btnS
             // 
-            this.btnS.Location = new System.Drawing.Point(447, 53);
+            this.btnS.Location = new System.Drawing.Point(447, 68);
             this.btnS.Name = "btnS";
             this.btnS.Size = new System.Drawing.Size(37, 35);
             this.btnS.TabIndex = 4;
@@ -124,7 +135,7 @@
             // 
             // btnA
             // 
-            this.btnA.Location = new System.Drawing.Point(404, 53);
+            this.btnA.Location = new System.Drawing.Point(404, 68);
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(37, 35);
             this.btnA.TabIndex = 5;
@@ -134,7 +145,7 @@
             // 
             // btnD
             // 
-            this.btnD.Location = new System.Drawing.Point(490, 53);
+            this.btnD.Location = new System.Drawing.Point(490, 68);
             this.btnD.Name = "btnD";
             this.btnD.Size = new System.Drawing.Size(37, 35);
             this.btnD.TabIndex = 6;
@@ -144,7 +155,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(404, 94);
+            this.button2.Location = new System.Drawing.Point(404, 109);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(59, 35);
             this.button2.TabIndex = 7;
@@ -154,7 +165,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(469, 94);
+            this.button3.Location = new System.Drawing.Point(469, 109);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(59, 35);
             this.button3.TabIndex = 8;
@@ -164,7 +175,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(404, 12);
+            this.button4.Location = new System.Drawing.Point(404, 27);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(37, 35);
             this.button4.TabIndex = 9;
@@ -174,7 +185,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(490, 12);
+            this.button5.Location = new System.Drawing.Point(490, 27);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(37, 35);
             this.button5.TabIndex = 10;
@@ -187,7 +198,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(12, 304);
+            this.checkBox1.Location = new System.Drawing.Point(12, 319);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(91, 17);
             this.checkBox1.TabIndex = 2;
@@ -196,7 +207,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(469, 135);
+            this.button7.Location = new System.Drawing.Point(469, 150);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(59, 35);
             this.button7.TabIndex = 12;
@@ -206,7 +217,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(404, 135);
+            this.button8.Location = new System.Drawing.Point(404, 150);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(59, 35);
             this.button8.TabIndex = 11;
@@ -237,7 +248,7 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtID);
             this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Location = new System.Drawing.Point(404, 177);
+            this.groupBox3.Location = new System.Drawing.Point(404, 192);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(124, 89);
             this.groupBox3.TabIndex = 15;
@@ -255,7 +266,7 @@
             // 
             // butDisconnect
             // 
-            this.butDisconnect.Location = new System.Drawing.Point(404, 272);
+            this.butDisconnect.Location = new System.Drawing.Point(404, 287);
             this.butDisconnect.Name = "butDisconnect";
             this.butDisconnect.Size = new System.Drawing.Size(124, 24);
             this.butDisconnect.TabIndex = 16;
@@ -273,7 +284,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(534, 12);
+            this.groupBox2.Location = new System.Drawing.Point(534, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(137, 162);
             this.groupBox2.TabIndex = 17;
@@ -351,7 +362,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(543, 180);
+            this.button6.Location = new System.Drawing.Point(543, 195);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(123, 23);
             this.button6.TabIndex = 18;
@@ -361,7 +372,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(543, 206);
+            this.button11.Location = new System.Drawing.Point(543, 221);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(122, 23);
             this.button11.TabIndex = 19;
@@ -369,11 +380,81 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 340);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(680, 22);
+            this.statusStrip.TabIndex = 20;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(680, 24);
+            this.menuStrip1.TabIndex = 21;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.disconnectToolStripMenuItem,
+            this.openCompactControlToolStripMenuItem,
+            this.sendChatToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
+            this.toolStripMenuItem1.Text = "Actions";
+            // 
+            // disconnectToolStripMenuItem
+            // 
+            this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
+            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.disconnectToolStripMenuItem.Text = "Disconnect";
+            // 
+            // openCompactControlToolStripMenuItem
+            // 
+            this.openCompactControlToolStripMenuItem.Name = "openCompactControlToolStripMenuItem";
+            this.openCompactControlToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.openCompactControlToolStripMenuItem.Text = "Open Compact Control";
+            // 
+            // sendChatToolStripMenuItem
+            // 
+            this.sendChatToolStripMenuItem.Name = "sendChatToolStripMenuItem";
+            this.sendChatToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.sendChatToolStripMenuItem.Text = "Send Chat";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.forgeWareIncToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.aboutToolStripMenuItem.Text = "Extra";
+            // 
+            // forgeWareIncToolStripMenuItem
+            // 
+            this.forgeWareIncToolStripMenuItem.Name = "forgeWareIncToolStripMenuItem";
+            this.forgeWareIncToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.forgeWareIncToolStripMenuItem.Text = "About";
+            // 
             // User_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 326);
+            this.ClientSize = new System.Drawing.Size(680, 362);
+            this.Controls.Add(this.statusStrip);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox2);
@@ -394,6 +475,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "User_Control";
             this.Text = "ForgeCommander v0.1 Alpha";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.User_Control_FormClosing);
@@ -405,6 +487,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,5 +529,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem disconnectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openCompactControlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sendChatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forgeWareIncToolStripMenuItem;
     }
 }

@@ -65,6 +65,7 @@ namespace SharpBot
                 sendserver = txtServer.Text + ":" + port;
                 
                     SharpControl.Login(txtUser.Text, txtPass.Text, sendserver);
+                    SharpControl.servername = txtServer.Text;
                     Hide();
                     (new User_Control()).ShowDialog();                    
                     Close();
@@ -204,6 +205,11 @@ namespace SharpBot
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

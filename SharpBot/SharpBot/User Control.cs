@@ -24,13 +24,14 @@ namespace SharpBot
         public User_Control()
         {
             InitializeComponent();
-            
+            toolStripStatusLabel1.Text = "Connected to: " + SharpControl.servername;
         }
         private void User_Control_Load(object sender, EventArgs e)
         {
             Command.Init();
             SharpControl.Client.OnChat += new EventHandler<ChatEventArgs>(Client_OnChat);
             SharpControl.Client.OnDisconnect += new EventHandler(Client_OnDisconnect);
+            
             Thread fixhead = new Thread(new ThreadStart(FixHeads));
             fixhead.Start();
             
@@ -448,5 +449,9 @@ namespace SharpBot
             JoyStick js = new JoyStick();
             js.Show();
         }
+
+
+
+
     }
 }

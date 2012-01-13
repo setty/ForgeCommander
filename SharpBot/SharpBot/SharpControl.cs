@@ -11,6 +11,7 @@ namespace SharpBot
 {
     public static class SharpControl
     {
+        public static string servername = "";
         public static string appversion = "v0.1 Alpha";
         public static bool teleporting = false;
         public static bool walkbool = false;
