@@ -16,15 +16,15 @@ namespace SharpBot
     {
         public static List<string> servers = new List<string>();
         public static List<string> users = new List<string>();
-        
+
         public Form1()
         {
 
             InitializeComponent();
             if (!Directory.Exists("bot")) { Directory.CreateDirectory("bot"); }
-            if (!File.Exists("bot/servers_dat.dll")) { File.Create("bot/servers_dat.dll"); }
-            if (!File.Exists("bot/users_dat.dll")) { File.Create("bot/users_dat.dll"); }
-            if (!File.Exists("bot/op.txt")) { File.Create("bot/op.txt"); }
+            if (!File.Exists("bot/servers_dat.dll")) { File.Create("bot/servers_dat.dll").Close(); }
+            if (!File.Exists("bot/users_dat.dll")) { File.Create("bot/users_dat.dll").Close(); }
+            if (!File.Exists("bot/op.txt")) { File.Create("bot/op.txt").Close(); }
             foreach (string line in File.ReadAllLines("bot/servers_dat.dll"))
             {
                 servers.Add(line);
@@ -38,7 +38,7 @@ namespace SharpBot
 
             foreach (string line in servers)
             {
-                 
+
                 ServerBox.Items.Add(line.Split('|')[0]);
             }
             foreach (string line in users)
@@ -63,14 +63,14 @@ namespace SharpBot
                     port = txtPort.Text;
                 }
                 sendserver = txtServer.Text + ":" + port;
-                
-                    SharpControl.Login(txtUser.Text, txtPass.Text, sendserver);
-                    SharpControl.servername = txtServer.Text;
-                    Hide();
-                    (new User_Control()).ShowDialog();                    
-                    Close();
 
-               
+                SharpControl.Login(txtUser.Text, txtPass.Text, sendserver);
+                SharpControl.servername = txtServer.Text;
+                Hide();
+                (new User_Control()).ShowDialog();
+                Close();
+
+
             }
             else
             {
@@ -83,7 +83,7 @@ namespace SharpBot
                     MessageBox.Show("Make sure to enter a hostname!");
                 }
             }
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -169,15 +169,15 @@ namespace SharpBot
         {
             if (txtUser.Text == null || txtUser.Text == "") { MessageBox.Show("Make sure to enter an username before you save!"); return; }
             string savevar = txtUser.Text + "|" + txtPass.Text;
-                users.Add(savevar);
-                UserBox.Items.Clear();
-                foreach (string line in users)
-                {
+            users.Add(savevar);
+            UserBox.Items.Clear();
+            foreach (string line in users)
+            {
 
-                    UserBox.Items.Add(line.Split('|')[0]);
-                }
-                File.WriteAllLines("bot/users_dat.dll", users.ToArray());
+                UserBox.Items.Add(line.Split('|')[0]);
             }
+            File.WriteAllLines("bot/users_dat.dll", users.ToArray());
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -198,23 +198,6 @@ namespace SharpBot
             }
             File.WriteAllLines("bot/users_dat.dll", servers.ToArray());
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-        }
-
-        
     }
+}
 

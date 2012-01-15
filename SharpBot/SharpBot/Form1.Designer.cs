@@ -64,7 +64,6 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(234, 20);
             this.txtPass.TabIndex = 1;
-            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // label1
             // 
@@ -132,7 +131,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
             this.label4.Location = new System.Drawing.Point(9, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Port";
             // 
@@ -153,7 +152,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
             this.label5.Location = new System.Drawing.Point(12, 177);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Server list";
             // 
@@ -193,7 +192,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Location = new System.Drawing.Point(12, 255);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "User list";
             // 
@@ -224,11 +223,10 @@
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
             this.label7.Location = new System.Drawing.Point(124, 331);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
+            this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "ForgeWare Inc.";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Form1
             // 
