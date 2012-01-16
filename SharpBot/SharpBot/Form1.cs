@@ -25,6 +25,7 @@ namespace SharpBot
             if (!File.Exists("bot/servers_dat.dll")) { File.Create("bot/servers_dat.dll").Close(); }
             if (!File.Exists("bot/users_dat.dll")) { File.Create("bot/users_dat.dll").Close(); }
             if (!File.Exists("bot/op.txt")) { File.Create("bot/op.txt").Close(); }
+            if (!File.Exists("bot/settings_dat.dll")) { File.Create("bot/settings_dat.dll").Close(); }
             foreach (string line in File.ReadAllLines("bot/servers_dat.dll"))
             {
                 servers.Add(line);
@@ -197,6 +198,16 @@ namespace SharpBot
                 UserBox.Items.Add(line.Split('|')[0]);
             }
             File.WriteAllLines("bot/users_dat.dll", servers.ToArray());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (!Program.settingsopened)
+            {
+                SettingsForm settings = new SettingsForm();
+                settings.Show();
+                Program.settingsopened = true;
+            }
         }
     }
 }
