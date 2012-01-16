@@ -19,6 +19,7 @@ namespace SharpBot
         }
         public static string saveservername = "";
         public static bool didsavename = false;
+        public static bool settingsopened = false;
 
     }
 }

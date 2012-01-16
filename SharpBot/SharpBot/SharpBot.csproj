@@ -85,6 +85,12 @@
     <Compile Include="SaveServer.Designer.cs">
       <DependentUpon>SaveServer.cs</DependentUpon>
     </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SharpControl.cs" />
     <Compile Include="User Control.cs">
       <SubType>Form</SubType>
@@ -109,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="SaveServer.resx">
       <DependentUpon>SaveServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control.resx">
       <DependentUpon>User Control.cs</DependentUpon>

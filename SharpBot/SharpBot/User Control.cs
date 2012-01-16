@@ -17,6 +17,7 @@ namespace SharpBot
 {
     public partial class User_Control : Form
     {
+        
         public bool connected = true;
         public short lasthealth = 0;
         public bool closed = false;
@@ -25,6 +26,7 @@ namespace SharpBot
         {
             InitializeComponent();
             toolStripStatusLabel1.Text = "Connected to: " + SharpControl.servername;
+            
         }
         private void User_Control_Load(object sender, EventArgs e)
         {
@@ -256,24 +258,6 @@ namespace SharpBot
 
         }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-            string[] nr = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-            string remaining = txtID.Text;
-            foreach (string n in nr)
-            {
-                remaining.Replace(n, "");
-            }
-            if (remaining.Length > 0)
-            {
-                Console.Beep();
-                foreach (string s in remaining.Split())
-                {
-                    txtID.Text.Replace(s, "");
-                }
-            }
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             LibMinecraft.Model.Vector3 location = new LibMinecraft.Model.Vector3(SharpControl.Client.Player.Location.X, SharpControl.Client.Player.Location.Y, SharpControl.Client.Player.Location.Z);
@@ -448,6 +432,42 @@ namespace SharpBot
         {
             JoyStick js = new JoyStick();
             js.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (!Program.settingsopened)
+            {
+                SettingsForm settings = new SettingsForm();
+                settings.Show();
+                Program.settingsopened = true;
+            }
+        }
+
+        private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (connected)
+            {
+                try
+                {
+                    SharpControl.Client.Disconnect();
+                }
+                catch
+                {
+                    SharpControl.Client.ForceDisconnect();
+                }
+            }
+        }
+
+        private void openCompactControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            JoyStick js = new JoyStick();
+            js.Show();
+        }
+
+        private void sendChatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sendmsg(textBox1.Text);
         }
 
 

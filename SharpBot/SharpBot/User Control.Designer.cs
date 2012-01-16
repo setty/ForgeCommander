@@ -43,10 +43,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.butDisconnect = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button12 = new System.Windows.Forms.Button();
@@ -68,8 +64,8 @@
             this.sendChatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forgeWareIncToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button13 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -225,50 +221,11 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(6, 58);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(112, 25);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "Place block below";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(6, 32);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(112, 20);
-            this.txtID.TabIndex = 14;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.txtID);
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Location = new System.Drawing.Point(404, 192);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(124, 89);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Set block";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Block ID";
-            // 
             // butDisconnect
             // 
-            this.butDisconnect.Location = new System.Drawing.Point(404, 287);
+            this.butDisconnect.Location = new System.Drawing.Point(534, 282);
             this.butDisconnect.Name = "butDisconnect";
-            this.butDisconnect.Size = new System.Drawing.Size(124, 24);
+            this.butDisconnect.Size = new System.Drawing.Size(137, 24);
             this.butDisconnect.TabIndex = 16;
             this.butDisconnect.Text = "Disconnect";
             this.butDisconnect.UseVisualStyleBackColor = true;
@@ -362,9 +319,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(543, 195);
+            this.button6.Location = new System.Drawing.Point(534, 195);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(123, 23);
+            this.button6.Size = new System.Drawing.Size(137, 23);
             this.button6.TabIndex = 18;
             this.button6.Text = "Recenter Location";
             this.button6.UseVisualStyleBackColor = true;
@@ -372,9 +329,9 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(543, 221);
+            this.button11.Location = new System.Drawing.Point(534, 224);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(122, 23);
+            this.button11.Size = new System.Drawing.Size(137, 23);
             this.button11.TabIndex = 19;
             this.button11.Text = "Open compact control";
             this.button11.UseVisualStyleBackColor = true;
@@ -421,18 +378,21 @@
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
             this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
+            this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
             // 
             // openCompactControlToolStripMenuItem
             // 
             this.openCompactControlToolStripMenuItem.Name = "openCompactControlToolStripMenuItem";
             this.openCompactControlToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.openCompactControlToolStripMenuItem.Text = "Open Compact Control";
+            this.openCompactControlToolStripMenuItem.Click += new System.EventHandler(this.openCompactControlToolStripMenuItem_Click);
             // 
             // sendChatToolStripMenuItem
             // 
             this.sendChatToolStripMenuItem.Name = "sendChatToolStripMenuItem";
             this.sendChatToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.sendChatToolStripMenuItem.Text = "Send Chat";
+            this.sendChatToolStripMenuItem.Click += new System.EventHandler(this.sendChatToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -445,21 +405,31 @@
             // forgeWareIncToolStripMenuItem
             // 
             this.forgeWareIncToolStripMenuItem.Name = "forgeWareIncToolStripMenuItem";
-            this.forgeWareIncToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.forgeWareIncToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.forgeWareIncToolStripMenuItem.Text = "About";
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(534, 253);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(137, 23);
+            this.button13.TabIndex = 22;
+            this.button13.Text = "Open Settings";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // User_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 362);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.butDisconnect);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.checkBox1);
@@ -483,8 +453,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.User_Control_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -513,10 +481,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butDisconnect;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button12;
@@ -538,5 +502,6 @@
         private System.Windows.Forms.ToolStripMenuItem sendChatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem forgeWareIncToolStripMenuItem;
+        private System.Windows.Forms.Button button13;
     }
 }
