@@ -71,10 +71,10 @@ namespace SharpBot
         private void button1_Click(object sender, EventArgs e)
         {
             int walkto = SharpControl.GetWalkway();
-            if (walkto == 0) { SharpControl.Client.Player.Location.Z += 1; }
-            if (walkto == 1) { SharpControl.Client.Player.Location.X -= 1; }
-            if (walkto == 2) { SharpControl.Client.Player.Location.Z -= 1; }
-            if (walkto == 3) { SharpControl.Client.Player.Location.X += 1; }
+            if (walkto == 0) { Misc.Map.ZPLUS(); Misc.Map.ZPLUS(); SharpControl.Client.Player.Location.Z += 1; }
+            if (walkto == 1) { Misc.Map.XMIN(); Misc.Map.XMIN(); SharpControl.Client.Player.Location.X -= 1; }
+            if (walkto == 2) { Misc.Map.ZMIN(); Misc.Map.ZMIN(); SharpControl.Client.Player.Location.Z -= 1; }
+            if (walkto == 3) { Misc.Map.XPLUS(); Misc.Map.XPLUS(); SharpControl.Client.Player.Location.X += 1; }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -87,10 +87,10 @@ namespace SharpBot
         private void button2_Click(object sender, EventArgs e)
         {
             int walkto = SharpControl.GetWalkway();
-            if (walkto == 2) { SharpControl.Client.Player.Location.Z += 1; }
-            if (walkto == 3) { SharpControl.Client.Player.Location.X -= 1; }
-            if (walkto == 0) { SharpControl.Client.Player.Location.Z -= 1; }
-            if (walkto == 1) { SharpControl.Client.Player.Location.X += 1; }
+            if (walkto == 2) { Misc.Map.ZPLUS(); Misc.Map.ZPLUS(); SharpControl.Client.Player.Location.Z += 1; }
+            if (walkto == 3) { Misc.Map.XMIN(); Misc.Map.XMIN(); SharpControl.Client.Player.Location.X -= 1; }
+            if (walkto == 0) { Misc.Map.ZMIN(); SharpControl.Client.Player.Location.Z -= 1; }
+            if (walkto == 1) { Misc.Map.XPLUS(); SharpControl.Client.Player.Location.X += 1; }
         }
 
         private void button4_Click(object sender, EventArgs e)

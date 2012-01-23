@@ -33,10 +33,8 @@ namespace SharpBot
             Command.Init();
             SharpControl.Client.OnChat += new EventHandler<ChatEventArgs>(Client_OnChat);
             SharpControl.Client.OnDisconnect += new EventHandler(Client_OnDisconnect);
-            
             Thread fixhead = new Thread(new ThreadStart(FixHeads));
             fixhead.Start();
-            
         }
         public void FixHeads()
         {
@@ -153,40 +151,40 @@ namespace SharpBot
         private void btnW_Click(object sender, EventArgs e)
         {
             int walkto = GetWalkway();
-            if (walkto == 0) { SharpControl.Client.Player.Location.Z += 1;  }
-            if (walkto == 1) { SharpControl.Client.Player.Location.X -= 1;  }
-            if (walkto == 2) { SharpControl.Client.Player.Location.Z -= 1;  }
-            if (walkto == 3) { SharpControl.Client.Player.Location.X += 1;  }
+            if (walkto == 0) { Misc.Map.ZPLUS(); SharpControl.Client.Player.Location.Z += 1;  }
+            if (walkto == 1) { Misc.Map.XMIN(); SharpControl.Client.Player.Location.X -= 1;  }
+            if (walkto == 2) { Misc.Map.ZMIN(); SharpControl.Client.Player.Location.Z -= 1;  }
+            if (walkto == 3) { Misc.Map.XPLUS(); SharpControl.Client.Player.Location.X += 1;  }
 
         }
 
         private void btnA_Click(object sender, EventArgs e)
         {
             int walkto = GetWalkway();
-            if (walkto == 1) { SharpControl.Client.Player.Location.Z += 1;  }
-            if (walkto == 2) { SharpControl.Client.Player.Location.X -= 1;  }
-            if (walkto == 3) { SharpControl.Client.Player.Location.Z -= 1;  }
-            if (walkto == 0) { SharpControl.Client.Player.Location.X += 1;  }
+            if (walkto == 1) { Misc.Map.ZPLUS(); SharpControl.Client.Player.Location.Z += 1;  }
+            if (walkto == 2) { Misc.Map.XMIN(); SharpControl.Client.Player.Location.X -= 1;  }
+            if (walkto == 3) { Misc.Map.ZMIN(); SharpControl.Client.Player.Location.Z -= 1;  }
+            if (walkto == 0) { Misc.Map.XPLUS(); SharpControl.Client.Player.Location.X += 1;  }
 
         }
 
         private void btnS_Click(object sender, EventArgs e)
         {
             int walkto = GetWalkway();
-            if (walkto == 2) { SharpControl.Client.Player.Location.Z += 1;  }
-            if (walkto == 3) { SharpControl.Client.Player.Location.X -= 1;  }
-            if (walkto == 0) { SharpControl.Client.Player.Location.Z -= 1;  }
-            if (walkto == 1) { SharpControl.Client.Player.Location.X += 1;  }
+            if (walkto == 2) { Misc.Map.ZPLUS(); SharpControl.Client.Player.Location.Z += 1;  }
+            if (walkto == 3) { Misc.Map.XMIN(); SharpControl.Client.Player.Location.X -= 1;  }
+            if (walkto == 0) { Misc.Map.ZMIN(); SharpControl.Client.Player.Location.Z -= 1;  }
+            if (walkto == 1) { Misc.Map.XPLUS(); SharpControl.Client.Player.Location.X += 1;  }
 
         }
 
         private void btnD_Click(object sender, EventArgs e)
         {
             int walkto = GetWalkway();
-            if (walkto == 3) { SharpControl.Client.Player.Location.Z += 1;  }
-            if (walkto == 0) { SharpControl.Client.Player.Location.X -= 1;  }
-            if (walkto == 1) { SharpControl.Client.Player.Location.Z -= 1;  }
-            if (walkto == 2) { SharpControl.Client.Player.Location.X += 1;  }
+            if (walkto == 3) { Misc.Map.ZPLUS(); SharpControl.Client.Player.Location.Z += 1;  }
+            if (walkto == 0) { Misc.Map.XMIN(); SharpControl.Client.Player.Location.X -= 1;  }
+            if (walkto == 1) { Misc.Map.ZMIN(); SharpControl.Client.Player.Location.Z -= 1;  }
+            if (walkto == 2) { Misc.Map.XPLUS(); SharpControl.Client.Player.Location.X += 1;  }
 
         }
         /// <summary>
@@ -468,6 +466,11 @@ namespace SharpBot
         private void sendChatToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Sendmsg(textBox1.Text);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
 

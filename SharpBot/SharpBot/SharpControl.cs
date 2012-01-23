@@ -18,7 +18,7 @@ namespace SharpBot
         public static MultiplayerClient Client = new MultiplayerClient();
         public static MinecraftServer Server = new MinecraftServer();
         public static User p = new User();
-        public static MultiplayerClient Connect(string username, string password, string server)
+        private static MultiplayerClient Connect(string username, string password, string server)
         {
             p.UserName = username;
             p.Password = password;

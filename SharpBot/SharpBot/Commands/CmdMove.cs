@@ -63,10 +63,10 @@ namespace SharpBot.Commands
                 while (time > 0)
                 {
                     int walkto = SharpControl.GetWalkway();
-                    if (walkto == 0) { SharpControl.Client.Player.Location.Z += 1; }
-                    if (walkto == 1) { SharpControl.Client.Player.Location.X -= 1; }
-                    if (walkto == 2) { SharpControl.Client.Player.Location.Z -= 1; }
-                    if (walkto == 3) { SharpControl.Client.Player.Location.X += 1; }
+                    if (walkto == 0) { Misc.Map.ZPLUS(); SharpControl.Client.Player.Location.Z += 1; }
+                    if (walkto == 1) { Misc.Map.XMIN(); SharpControl.Client.Player.Location.X -= 1; }
+                    if (walkto == 2) { Misc.Map.ZMIN(); SharpControl.Client.Player.Location.Z -= 1; }
+                    if (walkto == 3) { Misc.Map.XPLUS(); SharpControl.Client.Player.Location.X += 1; }
                     Thread.Sleep(250);
                     time--;
                 }
@@ -76,10 +76,10 @@ namespace SharpBot.Commands
                 while (time > 0)
                 {
                     int walkto = SharpControl.GetWalkway();
-                    if (walkto == 2) { SharpControl.Client.Player.Location.Z += 1; }
-                    if (walkto == 3) { SharpControl.Client.Player.Location.X -= 1; }
-                    if (walkto == 0) { SharpControl.Client.Player.Location.Z -= 1; }
-                    if (walkto == 1) { SharpControl.Client.Player.Location.X += 1; }
+                    if (walkto == 2) { Misc.Map.ZPLUS(); SharpControl.Client.Player.Location.Z += 1; }
+                    if (walkto == 3) { Misc.Map.XMIN(); SharpControl.Client.Player.Location.X -= 1; }
+                    if (walkto == 0) { Misc.Map.ZMIN(); SharpControl.Client.Player.Location.Z -= 1; }
+                    if (walkto == 1) { Misc.Map.XPLUS(); SharpControl.Client.Player.Location.X += 1; }
                     Thread.Sleep(250);
                     time--;
                 }

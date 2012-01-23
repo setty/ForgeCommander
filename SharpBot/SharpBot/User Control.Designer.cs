@@ -196,7 +196,7 @@
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(12, 319);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(91, 17);
+            this.checkBox1.Size = new System.Drawing.Size(92, 17);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Clear on send";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -295,7 +295,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 13);
+            this.label4.Size = new System.Drawing.Size(13, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Z";
             // 
@@ -304,7 +304,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 13);
+            this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Y";
             // 
@@ -313,7 +313,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 13);
+            this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "X";
             // 
@@ -343,7 +343,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip.Location = new System.Drawing.Point(0, 340);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(680, 22);
+            this.statusStrip.Size = new System.Drawing.Size(678, 22);
             this.statusStrip.TabIndex = 20;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -359,9 +359,10 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(680, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(678, 24);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // toolStripMenuItem1
             // 
@@ -422,7 +423,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 362);
+            this.ClientSize = new System.Drawing.Size(678, 362);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);

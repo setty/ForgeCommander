@@ -36,7 +36,7 @@
   <ItemGroup>
     <Reference Include="LibMinecraft, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\LibMinecraft.dll</HintPath>
+      <HintPath>bin\Debug\LibMinecraft.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -76,6 +76,7 @@
       <DependentUpon>JoyStick.cs</DependentUpon>
     </Compile>
     <Compile Include="Misc\Color.cs" />
+    <Compile Include="Misc\Map.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
